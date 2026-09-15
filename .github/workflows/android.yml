@@ -18,11 +18,11 @@ jobs:
       uses: gradle/gradle-build-action@v2
 
     - name: Build APK
-      run: gradle assembleDebug
+      run: gradle build
       working-directory: phash1
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: phash1/build/outputs/apk/debug/app-debug.apk
+        path: phash1/build/outputs/apk/**/*.apk
